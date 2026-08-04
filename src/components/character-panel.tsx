@@ -64,8 +64,13 @@ export function CharacterPanel(props: CharacterPanelProps) {
           <ChevronLeft size={18} />
         </button>
         <span>
-          <strong>{String(props.page).padStart(2, "0")}</strong> /
-          {String(props.pages).padStart(2, "0")}
+          <strong data-testid="pagination-current-page">
+            {String(props.page).padStart(2, "0")}
+          </strong>{" "}
+          /{" "}
+          <span data-testid="pagination-total-pages">
+            {String(props.pages).padStart(2, "0")}
+          </span>
         </span>
         <button
           type="button"
